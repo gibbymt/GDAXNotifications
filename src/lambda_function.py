@@ -33,11 +33,7 @@ sns = boto3.client(
 )
 
 
-def handler(event, context):
-    if context == 'test' or event == 'test':
-        # This is a test
-        sns.publish(PhoneNumber=phone_number, Message='This is a test')
-        print('Test Text sent')
+def lambda_handler(event, context):
 
     # GDAX is in the US/Eastern timezone
     now = datetime.now(timezone('US/Eastern'))
@@ -48,7 +44,11 @@ def handler(event, context):
                      for fill in fills[0]
                      if parse(fill['created_at']) >= earlier
                      and fill['settled']]
-    if recent_trades:
+    if context == 'test' or event == 'test':
+        # This is a test
+        sns.publish(PhoneNumber=phone_number, Message='This is a test')
+        print('Test Text sent')
+    elif recent_trades:
         for trade in recent_trades:
             print(trade)
             message = "your {side} of {size} for {price} has been settled".format(side=trade['side'],
@@ -57,4 +57,4 @@ def handler(event, context):
             sns.publish(PhoneNumber=phone_number, Message=message)
 
 
-handler(None, None)
+lambda_handler('test', None)
