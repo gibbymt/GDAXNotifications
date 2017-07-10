@@ -23,6 +23,6 @@ key	asdf0987asdf0987asdf0987as0df987
 7. If you get a text message then you're configured the lambda correctly
 
 ### Cost
-The great thing about running this serverless application is that's esentially free! 
+The great thing about running this serverless application is that's essentially free! 
 - You get 3,200,000 seconds of computute free each month while using AWS Lambda
 - You get 100 SNS SMS messages each month free. Each additional SMS costs $0.00645
