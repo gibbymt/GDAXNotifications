@@ -1,5 +1,5 @@
-## GDAXNotifications
-A simple text notification service build with AWS lambda to notify on order fills
+## GDAX Notifications
+A simple text notification service build with AWS lambda to notify on GDAX order fills
 
 ### Config and Setup
 1. Configure a CloudWatch rule that runs every 1 minute
