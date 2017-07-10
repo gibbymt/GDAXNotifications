@@ -57,4 +57,4 @@ def lambda_handler(event, context):
             sns.publish(PhoneNumber=phone_number, Message=message)
 
 
-lambda_handler('test', None)
+lambda_handler(None, None)
