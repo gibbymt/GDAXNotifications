@@ -98,3 +98,5 @@ ENV/
 # idea
 .idea/
 
+# deployment file
+deployment_bundle.zip
